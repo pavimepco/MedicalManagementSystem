@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+    id="WebApp_ID" version="3.0">
+  <display-name>MedicalManagementSystem</display-name>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <servlet-name>DoctorsLoginServlet</servlet-name>
+    <servlet-class>com.chainsys.mms.servlet.DoctorsLoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DoctorsLoginServlet</servlet-name>
+    <url-pattern>/DoctorsLoginServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>com.chainsys.mms.servlet.LoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/LoginServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>SignUpServlet</servlet-name>
+    <servlet-class>com.chainsys.mms.servlet.SignUpServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SignUpServlet</servlet-name>
+    <url-pattern>/SignUpServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>SympServlet</servlet-name>
+    <servlet-class>com.chainsys.mms.servlet.SympServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SympServlet</servlet-name>
+    <url-pattern>/SympServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>DisplayServlet</servlet-name>
+    <servlet-class>com.chainsys.mms.servlet.DisplayServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DisplayServlet</servlet-name>
+    <url-pattern>/DisplayServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>FillDetailsServlet</servlet-name>
+    <servlet-class>com.chainsys.mms.servlet.FillDetailsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FillDetailsServlet</servlet-name>
+    <url-pattern>/FillDetailsServlet</url-pattern>
+  </servlet-mapping>
+ 
+   
+  <servlet-mapping>
+    <servlet-name>DetailsServlet</servlet-name>
+    <url-pattern>/DetailsServlet</url-pattern>
+  </servlet-mapping>
+   <servlet>
+    <servlet-name>DetailsServlet</servlet-name>
+    <servlet-class>com.chainsys.mms.servlet.DetailsServlet</servlet-class>
+  </servlet>
+
+    
+</web-app>
