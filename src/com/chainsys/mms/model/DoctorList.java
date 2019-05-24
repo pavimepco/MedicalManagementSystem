@@ -1,12 +1,44 @@
 package com.chainsys.mms.model;
 
+/**
+ * DoctorList class has symptom name,department name,employee name
+ * 
+ * @author pavi2107
+ */
 public class DoctorList {
+	private String sname;
+	private String dname;
+	private String ename;
 
-	
+	public String getSname() {
+		return sname;
+	}
+
+	public void setSname(String sname) {
+		this.sname = sname;
+	}
+
+	public String getDname() {
+		return dname;
+	}
+
+	public void setDname(String dname) {
+		this.dname = dname;
+	}
+
+	public String getEname() {
+		return ename;
+	}
+
+	public void setEname(String ename) {
+		this.ename = ename;
+	}
+
 	@Override
 	public String toString() {
 		return "DoctorList [sname=" + sname + ", dname=" + dname + ", ename=" + ename + "]";
 	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -16,6 +48,7 @@ public class DoctorList {
 		result = prime * result + ((sname == null) ? 0 : sname.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -41,28 +74,6 @@ public class DoctorList {
 		} else if (!sname.equals(other.sname))
 			return false;
 		return true;
-	}
-	private String sname;
-	private String dname;
-	private String ename;
-	
-	public String getSname() {
-		return sname;
-	}
-	public void setSname(String sname) {
-		this.sname = sname;
-	}
-	public String getDname() {
-		return dname;
-	}
-	public void setDname(String dname) {
-		this.dname = dname;
-	}
-	public String getEname() {
-		return ename;
-	}
-	public void setEname(String ename) {
-		this.ename = ename;
 	}
 
 }

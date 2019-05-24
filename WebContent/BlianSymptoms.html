@@ -10,17 +10,23 @@
 <title>Symptom</title>
 <link rel="stylesheet" type="text/css" href="search.css">
 <style>
-html, 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+html, 
 body {
-	
+	background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 	font-family: 'Open Sans', sans-serif;
+	height: 100vh;
+	margin: 0;
+	overflow-y: hidden;
 }
 
 .search {
 	width: 100%;
 	position: relative;
 	display: flex;
+	transform: scale(1.5);
 }
 
 .searchTerm {
@@ -59,25 +65,34 @@ body {
 	transform: translate(-50%, -50%);
 }
 
-</style>
+h1 {
+   font-size : 50px;
+}
 
+</style>
 <title> DETAILS</title>
 </head>
 <body class="text-center">
 <body background="hosp.jpg" height="150" width="150">
 	
 <header>
-<h1 align="center"> Feeling Sick! Don't worry...</h1>
-</header>	
-	<form method="post" action="SympServlet">
+<h1 class="font-size" align="center">Search for your problem</h1>
+</header>
+<form method="post" action="NeuroServlet">
+<div align="center"><span align="center" class="error">
+<select class="custom-select" name="Symp" style="width: 250px; height: 50px;">
+				<option value="Migrane">Migrane</option>
+				<option value="Dizziness">Dizziness</option>
+				<option value="Stroke">Stroke</option>
+				<option value="Epilepsy">Epilepsy</option>
+				<option value="Numbness">Numbness</option>
+				<option value="Tremors">Tremors</option>
+			</select> <br> <br> <br>
+</span></div>
+	
 		<div class="wrap">
 			<div class="search">
-				<input type="text" class="searchTerm"
-					placeholder="Enter your Symptom" name="sym">
-	
-				
-				<button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
-			
+	        		<button class="btn btn-lg btn-primary btn-block" style="margin: 0 auto;" type="submit">Submit</button>
 			</div>
 		</div>
 	</form>

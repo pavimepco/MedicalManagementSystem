@@ -8,39 +8,22 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class DetailsServlet
- */
+import org.apache.log4j.Logger;
 
 public class DetailsServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public DetailsServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+	static final Logger log = Logger.getLogger(DetailsServlet.class);
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+	public DetailsServlet() {
+		super();
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		String dname=request.getParameter("name");
-		System.out.println(dname);
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String dname = request.getParameter("name");
+		log.debug(dname);
 		request.setAttribute("dname", dname);
 		RequestDispatcher rd = request.getRequestDispatcher("FillDetails.jsp");
 		rd.forward(request, response);
 	}
-
 }

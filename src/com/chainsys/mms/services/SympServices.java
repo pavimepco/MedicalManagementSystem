@@ -11,21 +11,15 @@ public class SympServices {
 
 	SymptomsDAO dao = new SymptomsDAO();
 
-	public boolean checkSymp(Symptoms s) {
+	public boolean checkSymp(Symptoms s) throws SQLException{
 		boolean b = false;
-		try {
+		
 			b = dao.checkSymptoms(s);
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 		return b;
 	}
 
 	public List<DoctorList> findDoc(Symptoms s) throws SQLException {
-
 		List<DoctorList> dl = dao.findDoctor(s);
 		return dl;
 	}
-
 }

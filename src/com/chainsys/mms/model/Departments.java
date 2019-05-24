@@ -1,5 +1,10 @@
 package com.chainsys.mms.model;
 
+/**
+ * Departments class contains department id and name
+ * 
+ * @author pavi2107
+ */
 public class Departments {
 	private int dept_id;
 	private String dept_name;
@@ -24,6 +29,4 @@ public class Departments {
 	public String toString() {
 		return "DepartmentsDAO [dept_id=" + dept_id + ", dept_name=" + dept_name + "]";
 	}
-
 }
-

@@ -12,8 +12,9 @@ import com.chainsys.mms.util.ConnectionUtil;
 
 public class DepartmentsDAO {
 	ResultSet resultSet = null;
+
 	/**
-	 * 
+	 * This method finds the department name
 	 * @param d
 	 * @return
 	 * @throws SQLException
@@ -31,6 +32,7 @@ public class DepartmentsDAO {
 			obj.setDept_name(resultset.getString("dept_name"));
 			dlist.add(obj);
 		}
+		connection.close();
 		return dlist;
 	}
 }

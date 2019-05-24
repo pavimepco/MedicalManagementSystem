@@ -10,17 +10,23 @@
 <title>Symptom</title>
 <link rel="stylesheet" type="text/css" href="search.css">
 <style>
-html, 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+html, 
 body {
-	background: #f2f2f2;
+	background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 	font-family: 'Open Sans', sans-serif;
+	height: 100vh;
+	margin: 0;
+	overflow-y: hidden;
 }
 
 .search {
 	width: 100%;
 	position: relative;
 	display: flex;
+	transform: scale(1.5);
 }
 
 .searchTerm {
@@ -59,24 +65,26 @@ body {
 	transform: translate(-50%, -50%);
 }
 
-</style>
+h1 {
+   font-size : 50px;
+}
 
+</style>
 <title> DETAILS</title>
 </head>
 <body class="text-center">
+<body background="hosp.jpg" height="150" width="150">
 	
 <header>
-<h1 align="center"> Feeling Sick! Don't worry...</h1>
-</header>	
+<h1 class="font-size" align="center">Search for your Symptom</h1>
+</header>
+<div align="center"><span align="center" class="error">${error }</span></div>
 	<form method="post" action="SympServlet">
 		<div class="wrap">
 			<div class="search">
-				<input type="text" class="searchTerm"
-					placeholder="Enter your Symptom" name="sym">
-	
-				
-				<button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
-			
+				<input type="text" class="searchTerm" title="3-20 Characters,A-z,a-z is only allowed" pattern="[a-zA-Z\s]{3,20}"
+					placeholder="Enter your Symptom" name="sym" required><br>
+	        		<button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
 			</div>
 		</div>
 	</form>

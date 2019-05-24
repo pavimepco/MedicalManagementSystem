@@ -10,60 +10,51 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.log4j.Logger;
+
 import com.chainsys.mms.model.DoctorList;
 import com.chainsys.mms.model.Symptoms;
 import com.chainsys.mms.services.SympServices;
 
 public class SympServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	static final Logger log = Logger.getLogger(SympServlet.class);
 
 	public SympServlet() {
 		super();
 
 	}
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-
-	}
-
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
 		String search = request.getParameter("sym");
-		System.out.println(search);
-				
+		log.debug(search);
 		Symptoms s = new Symptoms();
 		s.setSym_name(search);
-		System.out.println(s.getSym_name());
-		
-	//	SymptomsDAO dao = new SymptomsDAO();
-		
-		SympServices ss=new SympServices();
-		boolean b=ss.checkSymp(s);
-		System.out.println(b);
-		List<DoctorList> list = null;
-		if(b) {		
-		
+		log.debug(s.getSym_name());
+		SympServices ss = new SympServices();
+		boolean b = false;
 		try {
-			list = ss.findDoc(s);
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			b = ss.checkSymp(s);
+		} catch (SQLException e1) {
+			e1.printStackTrace();
 		}
-
-		System.out.println("List in servlet" + list);
-		
-		request.setAttribute("SY", list);
-		RequestDispatcher rd = request.getRequestDispatcher("Symptom.jsp");
-		rd.include(request, response);
-		}
-		else {
-			RequestDispatcher rd = request.getRequestDispatcher("Success.html");
+		log.debug(b);
+		List<DoctorList> list = null;
+		if (b) {
+			try {
+				list = ss.findDoc(s);
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			System.out.println("List in servlet" + list);
+			request.setAttribute("SY", list);
+			RequestDispatcher rd = request.getRequestDispatcher("Symptom.jsp");
+			rd.include(request, response);
+		} else {
+			request.setAttribute("error", "Invalid Symptom Name!!");
+			RequestDispatcher rd = request.getRequestDispatcher("SearchSymp.jsp");
 			rd.include(request, response);
 		}
-		
-		doGet(request, response);
 	}
-	
 }

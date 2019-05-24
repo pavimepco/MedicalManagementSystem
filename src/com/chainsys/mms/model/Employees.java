@@ -1,12 +1,19 @@
 package com.chainsys.mms.model;
 
+/**
+ * Employees class maintains employee details of hospital
+ * 
+ * @author pavi2107
+ */
 public class Employees {
 	private int emp_id;
 	private String emp_name;
 	private String emp_desig;
-
 	private String emp_gender;
 	private int dept_id;
+	private String emp_email;
+	private String emp_pwd;
+	private String created_at;
 
 	public int getEmp_id() {
 		return emp_id;
@@ -71,10 +78,6 @@ public class Employees {
 	public void setCreated_at(String created_at) {
 		this.created_at = created_at;
 	}
-
-	private String emp_email;
-	private String emp_pwd;
-	private String created_at;
 
 	@Override
 	public String toString() {

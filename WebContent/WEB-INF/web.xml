@@ -2,8 +2,7 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
     xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
-    id="WebApp_ID" version="3.0">
-  <display-name>MedicalManagementSystem</display-name>
+    id="WebApp_ID" version="3.0"> <display-name>MedicalManagementSystem</display-name>
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
@@ -55,16 +54,92 @@
     <servlet-name>FillDetailsServlet</servlet-name>
     <url-pattern>/FillDetailsServlet</url-pattern>
   </servlet-mapping>
- 
-   
   <servlet-mapping>
     <servlet-name>DetailsServlet</servlet-name>
     <url-pattern>/DetailsServlet</url-pattern>
   </servlet-mapping>
-   <servlet>
+  <servlet>
     <servlet-name>DetailsServlet</servlet-name>
     <servlet-class>com.chainsys.mms.servlet.DetailsServlet</servlet-class>
   </servlet>
-
-    
+  <servlet>
+    <servlet-name>OrthoServlet</servlet-name>
+    <servlet-class>com.chainsys.mms.servlet.OrthoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>OrthoServlet</servlet-name>
+    <url-pattern>/OrthoServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>OrthoLoginServlet</servlet-name>
+    <servlet-class>com.chainsys.mms.servlet.OrthoLoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>OrthoLoginServlet</servlet-name>
+    <url-pattern>/OrthoLoginServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  <servlet-name>OrthoFillDetailsServlet</servlet-name>
+    <servlet-class>com.chainsys.mms.servlet.OrthoFillDetailsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>OrthoFillDetailsServlet</servlet-name>
+     <url-pattern>/OrthoFillDetailsServlet</url-pattern>
+  </servlet-mapping>
+   <servlet>
+    <servlet-name>NeuroServlet</servlet-name>
+    <servlet-class>com.chainsys.mms.servlet.NeuroServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>NeuroServlet</servlet-name>
+    <url-pattern>/NeuroServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>NeuroLoginServlet</servlet-name>
+    <servlet-class>com.chainsys.mms.servlet.NeuroLoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>NeuroLoginServlet</servlet-name>
+    <url-pattern>/NeuroLoginServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  <servlet-name>NeuroFillDetailsServlet</servlet-name>
+    <servlet-class>com.chainsys.mms.servlet.NeuroFillDetailsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>NeuroFillDetailsServlet</servlet-name>
+     <url-pattern>/NeuroFillDetailsServlet</url-pattern>
+  </servlet-mapping>
+   <servlet>
+    <servlet-name>GeneMedServlet</servlet-name>
+    <servlet-class>com.chainsys.mms.servlet.GeneMedServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GeneMedServlet</servlet-name>
+    <url-pattern>/GeneMedServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>GeneMedLoginServlet</servlet-name>
+    <servlet-class>com.chainsys.mms.servlet.GeneMedLoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GeneMedLoginServlet</servlet-name>
+    <url-pattern>/GeneMedLoginServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  <servlet-name>GeneMedFillDetailsServlet</servlet-name>
+    <servlet-class>com.chainsys.mms.servlet.GeneMedFillDetailsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GeneMedFillDetailsServlet</servlet-name>
+     <url-pattern>/GeneMedFillDetailsServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>PaymentServlet</servlet-name>
+    <servlet-class>com.chainsys.external.bank.PaymentServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PaymentServlet</servlet-name>
+    <url-pattern>/PaymentServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
